@@ -1,0 +1,29 @@
+@import "global.scss";
+
+.header{
+    background-color: rgb(123,23,132);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 80px;
+    img{
+        height: 80px;
+        width: 80px;
+    }
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul{
+            display: flex;
+            list-style:none;
+            column-gap: 30px;
+            li{
+                a{
+                    font-size: 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
