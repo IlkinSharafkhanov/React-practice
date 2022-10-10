@@ -1,15 +1,22 @@
+// rooting
+import { Routes, Route } from "react-router-dom";
 //components
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 //pages
-
+import Main from "./pages/Main";
+import Table from "./pages/Table";
+import Details from "./pages/Details";
 //styles
 
 function App() {
   return (
     <div className="app">
-       <Header/>
-       <Footer/>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/table" element={<Table />} />
+        <Route path="/details:id" element={<Details />} />
+      </Routes>  
     </div>
   );
 }
