@@ -1,20 +1,37 @@
 .content{
     padding: 100px;
+    button{
+      cursor: pointer;
+      margin-left: 1140px;
+      width: 100px;
+      height: 30px;
+      border: none;
+      background-color: #04AA6D;
+      color: white;
+    }
     #customers {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
         width: 100%;
         tbody{
             tr{
-                span{
-                    background-color: #04AA6D;
-                    padding: 5px;
-                    border-radius: 3px;
-                    a{
-                        color: white;
-                        text-decoration: none;
-                    }
-                }
+               td{
+                .delete{
+                  background-color: red;
+                  color: white;
+                  cursor: pointer;
+                 }
+                  span{
+                    margin-right: 5px;
+                      background-color: #04AA6D;
+                      padding: 5px;
+                      border-radius: 3px;
+                      a{
+                          color: white;
+                          text-decoration: none;
+                      }
+                  }
+               }
             }
         }
       }

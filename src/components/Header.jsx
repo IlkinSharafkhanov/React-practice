@@ -10,11 +10,11 @@ const Header = () => {
       <img src={logo} alt="logo" />
       <nav>
         <ul className="navigation">
+        <li>
+          <Link to = "/">Home</Link>
+        </li>
           <li>
-          <Link to = "/">Counter</Link>
-          </li>
-          <li>
-          <Link to = "/table">Table</Link>
+          <Link to = "/count">Counter</Link>
           </li>
         </ul>
       </nav>
