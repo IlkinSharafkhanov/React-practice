@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../../components/Header";
-
-// rooting
-import { Routes, Route } from "react-router-dom";
-import PrivateRoutes from "../../utils/PrivateRoutes";
-
-
-import Details from "../Details";
-import Main from "../Main";
 
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -22,7 +13,6 @@ const Table = () => {
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
-    //   console.log(response.data);
       setData(response.data);
     });
   }, [deleteProduct]);
@@ -41,7 +31,7 @@ const Table = () => {
   
   return (
      
-    <div className="content">
+    <div className="content-table">
       <button onClick={logOut}>Log Out</button>
       <table id="customers">
         <thead>

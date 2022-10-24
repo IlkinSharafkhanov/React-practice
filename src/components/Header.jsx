@@ -11,7 +11,10 @@ const Header = () => {
       <nav>
         <ul className="navigation">
         <li>
-          <Link to = "/">Home</Link>
+          <Link to = "/dashboard">Dashboard</Link>
+        </li>
+        <li>
+          <Link to = "/table">Table</Link>
         </li>
           <li>
           <Link to = "/count">Counter</Link>
