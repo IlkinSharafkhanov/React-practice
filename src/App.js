@@ -9,16 +9,19 @@ import Main from "./pages/Main";
 import Table from "./pages/Table";
 import Details from "./pages/Details";
 import Dashboard from "./pages/Dashboard";
+import Cart from "./pages/Cart";
+import Products from "./pages/Products";
 //styles
 
-function App () {
-  const navigate = useLocation()
-  console.log(navigate);
+function App() {
+  const navigate = useLocation();
   return (
     <div className="app">
-      {navigate.pathname !== "/"?<Header/>:null}
+      {navigate.pathname !== "/" ? <Header /> : null}
       <Routes>
         <Route element={<PrivateRoutes />}>
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/table" element={<Table />} exact />
           <Route path="/details:id" element={<Details exact />} />

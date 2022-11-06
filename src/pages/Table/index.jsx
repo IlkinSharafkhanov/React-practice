@@ -7,22 +7,32 @@ import "./style.scss";
 
 const Table = () => {
   const [data, setData] = useState([]);
+  const [responseTitle, setResponseTitle] = useState("")
   const navigate = useNavigate()
   const [deleteProduct, setDeleteProduct] = useState("");
-  console.log(data);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
       setData(response.data);
+      setResponseTitle(response.data)
     });
   }, [deleteProduct]);
 
   const deleteItem = (id) =>{
     axios.delete(`https://fakestoreapi.com/products/${id}`).then((response) =>{
-      console.log(response);
       setDeleteProduct(deleteProduct)
     })
   }
+
+  const searchFilter = (value) => {
+    if(value.trim(" ")){
+      const newData = responseTitle.filter((user) => user.title.toLowerCase().includes(value.toLowerCase()))
+      setData(newData) 
+    } else if (value.trim(" ") === ""){
+      setData(responseTitle)
+    }
+  }
+
 
   const logOut = () => {
     localStorage.removeItem("token")
@@ -32,6 +42,7 @@ const Table = () => {
   return (
      
     <div className="content-table">
+      <input type="text" placeholder="Search.." onChange={(e) => searchFilter(e.target.value)}/>
       <button onClick={logOut}>Log Out</button>
       <table id="customers">
         <thead>

@@ -1,30 +1,20 @@
 import React, {useState} from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Button from "../../components/Button";
 import CounterText from "../../components/CounterText";
+import { countUp, countDown } from "../../redux/actions/countActions";
 import "./index.scss";
 
 const CountIncrease = () => {
-  const [count, setCount] = useState(0)
-
-
-  const increment = () =>{
-    setCount(count + 1)
-  }
-
-  const decrement = () =>{
-    if(count!=0){
-    setCount(count- 1)
-    }else{
-      alert("0-dan az olmaz")
-    }
-  }
+  const dispatch = useDispatch()
+  const count = useSelector((store) => store.counterData.count)
 
   return (
     <div className="counter">
       <div className="counter-content">
-        <Button text="+" onCLick={increment} className="increment"/>
+        <Button text="+" onCLick={() => dispatch(countUp())} className="increment"/>
         <CounterText count = {count}/>
-        <Button text="-" onCLick={decrement} className="decrement"/>
+        <Button text="-" onCLick={() => dispatch(countDown())} className="decrement"/>
       </div>
     </div>
   );
